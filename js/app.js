@@ -13,21 +13,36 @@ const Cart = function (items) {
 };
 
 Cart.prototype.addItem = function (product, quantity) {
-  let carttemp = new CartItem(product, quantity);
-  this.items.push(carttemp);
+  let cartItemTemp = new CartItem(product, quantity);
+  this.items.push(cartItemTemp);
 };
 
 Cart.prototype.saveToLocalStorage = function () {
-  // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  let stringify = JSON.stringify(state.cart.items);
+  localStorage.setItem("cart", stringify);
 };
 
-Cart.prototype.removeItem = function (item) {
+Cart.prototype.removeItem = function (itemName) {
+  for (let i = 0; i < state.cart.items.length; i++) {
+    if (state.cart.items[i].product === itemName) {
+      console.log(i);
+      let newItems = state.cart.items.splice(i, i);
+      state.cart.items = newItems;
+      console.log(newItems);
+    }
+  }
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 
 Cart.prototype.updateCounter = function () {
-  // TODO: Update the cart count in the header nav with the number of items in the Cart
+  let counter = document.getElementById("itemCount");
+  let count = 0;
+  for (let i = 0; i < state.cart.items.length; i++) {
+    let item = state.cart.items[i];
+    count += parseInt(item.quantity);
+  }
+  counter.textContent = count;
 };
 
 const CartItem = function (product, quantity) {

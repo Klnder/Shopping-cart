@@ -32,14 +32,9 @@ function addSelectedItemToCart() {
   console.log(quantity.value);
   let item = document.getElementById("items");
   console.log(item.value);
-  let carttemp = new CartItem(item.value, quantity.value);
-  //Cart.items.push(carttemp);
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, add one item to the Cart
+  state.cart.addItem(item.value, quantity.value);
 }
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   let quantity = document.getElementById("quantity");
   console.log(quantity.value);
