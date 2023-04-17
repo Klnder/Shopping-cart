@@ -32,11 +32,8 @@ function showCart() {
     let line = document.createElement("tr");
     //add our text content
     let tableData = document.createElement("td");
-    let button = document.createElement("button");
-    button.innerText = "x";
-    button.setAttribute("id", item.product);
-    button.addEventListener("click", removeItemFromCart);
-    tableData.appendChild(button);
+    tableData.innerText = "X";
+    tableData.setAttribute("id", item.product);
     line.appendChild(tableData);
     tableData = document.createElement("td");
     tableData.textContent = item.quantity;
@@ -53,13 +50,10 @@ function removeItemFromCart(event) {
   event.preventDefault();
 
   let itemName = event.target.id;
-  let button = document.getElementById(itemName);
   console.log(itemName);
-  button.disabled = true;
-  button.removeEventListener("click", removeItemFromCart);
-  //state.cart.removeItem(itemName);
-  //state.cart.saveToLocalStorage();
-  //renderCart();
+  state.cart.removeItem(itemName);
+  state.cart.saveToLocalStorage();
+  renderCart();
 }
 
 // This will initialize the page and draw the cart on screen

@@ -26,12 +26,10 @@ Cart.prototype.removeItem = function (itemName) {
   for (let i = 0; i < state.cart.items.length; i++) {
     if (state.cart.items[i].product === itemName) {
       console.log(i);
-      let newItems = state.cart.items.splice(i, i);
-      state.cart.items = newItems;
-      console.log(newItems);
+      state.cart.items.splice(i, 1);
+      console.log(state.cart.items);
     }
   }
-  // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 
