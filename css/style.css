@@ -1,1 +1,75 @@
 /* TODO: Make it awesome */
+* {
+  font-family: "Bruno Ace SC", cursive;
+}
+header {
+  background-color: #282828;
+  color: #66fcf1;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Bruno Ace SC", cursive;
+  font-size: 2rem;
+}
+nav {
+  width: 90%;
+  margin: 0 auto;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
+}
+li {
+  margin: 10px;
+}
+a {
+  text-decoration: none;
+  color: #66fcf1;
+}
+a:hover {
+  color: white;
+}
+span {
+  margin-right: 10px;
+}
+body {
+  background-color: black;
+  color: #3500d3;
+}
+section {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 10px;
+}
+legend {
+  margin-bottom: 5px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+#cart-container {
+  background-color: #3500d3;
+  color: white;
+  padding: 10px;
+}
+table {
+  width: 80%;
+  margin: 0 auto;
+}
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  margin: 5px;
+}
